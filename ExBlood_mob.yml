@@ -1,0 +1,41 @@
+BasicBat:
+  Type: BAT # 박쥐로 세팅
+  Health : 100
+  #방어력 스탯 0%
+  #Skills:
+    # 기본공격(5초) : 10칸의 거리에 초음파로 범위 공격을 해 100의 피해를 입힌다
+  Options:
+    MovementSpeed: 0.7 # 이동속도 빠름 기준, 비행효과(추가해야함)
+
+BigSpider:
+  Type: Spider # 거미로 세팅
+  Health : 150
+  #방어력 스탯 5%
+  #Skills:
+    # 기본공격(3초) :  다리로 적을 찔러 100의 피해를 입힌다
+  Options:
+    MovementSpeed: 0.5 # 이동속도 보통 기준
+
+HungerDracula:
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠
+  Health : 2000
+  #방어력 스탯 5%
+  #Skills:
+    # 기본공격 없음
+    # 패턴주기 4~8초
+    # 패턴1 흡혈 : 2초동안 준비자세를 취하고 주변 적에게 100의 피해를 입히고 HP를 100 회복한다 ( 중복회복 가능 )
+    # 패턴2 블러드 스피어 : 피로만든 창을 다섯 갈래로 날려 220의 피해를 입힌다
+    # 패턴3 비행 : 날개를 펼쳐 20초동안 빠르게 비행한다
+    # 패턴4 박쥐소환 : 박쥐를 3마리 소환한다
+    # 패턴5 피의축제 : 3초동안 준비자세를 취하고 넓은 범위에 피를 퍼트려 444의 피해를 입힌다
+    # 패턴6 심장뽑기 : 손톱으로 적 한명의 심장을 뚫어 400의 피해를 입힌다
+
+  Options:
+    MovementSpeed: 0.5 # 이동속도 보통 기준
+  #보스바 테스트
+  BossBar:
+    Enabled: true
+    Title: 'Hunger Dracula'
+    Range: 32
+    Color: RED
+    Style: SOLID

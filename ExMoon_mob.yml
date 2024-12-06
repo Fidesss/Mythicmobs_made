@@ -1,0 +1,39 @@
+BasicWolf:
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠 (Wolf로 세팅후 Option Angry 적용 테스트 해봐야함)
+  Health : 100
+  #방어력 스탯 3%
+  #Skills:
+    # 기본공격(2초) : 적을 물어서 60의 피해를 입힌다
+  Options:
+    MovementSpeed: 0.2 #이동속도 보통 기준
+    AttackSpeed: 1
+  #보스바 테스트
+  BossBar:
+    Enabled: true
+    Title: 'Basic Wolf'
+    Range: 32
+    Color: RED
+    Style: SOLID
+
+WereWolf:
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠 (Wolf로 세팅후 Option Angry 적용 테스트 해봐야함)
+  Health : 1450
+  #방어력 스탯 5%
+  #Skills:
+    #기본공격(3초) : 양손으로 할퀴어서 145의 피해를 입힌다
+    # 패턴주기 10~12초
+    # 패턴1 약자멸시 : 체력이 제일 낮은 적에게 돌진해 250의 피해를 입힌다
+    # 패턴2 집합 : 울음 소리를 퍼트려 늑대를 5마리 소환한다
+    # 패턴3 휩쓸기 : 손톱으로 전방을 휩쓸어 300의 피해를 입힌다
+    # 패턴4 습격 : 2초동안 자세를 잡고 전방으로 점프해 적을 깨물어 400의 피해를 입힌다 
+    # 패턴5 분노 : 10초동안 이동속도가 빨라지고 기본공격 주기가 1.5초 짧아진다 
+  Options:
+    MovementSpeed: 0.2 #이동속도 보통 기준
+    AttackSpeed: 1
+  #보스바 테스트
+  BossBar:
+    Enabled: true
+    Title: 'Were Wolf'
+    Range: 32
+    Color: RED
+    Style: SOLID
