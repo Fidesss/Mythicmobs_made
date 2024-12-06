@@ -1,0 +1,43 @@
+WarriorGoblin:
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠
+  Health : 120
+  Display : "&f전사 고블린"
+  Nameplate:
+      Enabled: false
+  #방어력 스탯 2%
+  #Skills:
+    # 기본공격(2초) : 방망이로 후려쳐 70의 피해를 입힌다
+  Options:
+    MovementSpeed: 0.3 # 이동속도 보통 기준
+    AttackSpeed: 1
+    PreventSunburn : true
+
+
+ShieldGoblin:
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠
+  Health : 180
+  Display : "&f방패 고블린"
+  Nameplate:
+      Enabled: false
+  #방어력 스탯 8%
+  #Skills:
+    # 기본공격(3초) : 방패로 밀쳐 40의 피해를 입힌다
+  Options:
+    MovementSpeed: 0.3 # 이동속도 보통 기준
+    AttackSpeed: 1
+    PreventSunburn : true
+
+
+ArcherGoblin:
+  Type: Skeleton # 어떻게 될지 몰라 좀비로 둠
+  Health : 100
+  Display : "&f궁수 고블린"
+  Nameplate:
+      Enabled: false
+  #방어력 스탯 0%
+  #Skills:
+    # 기본공격(3초) : 10칸 거리에 활을 쏴 90의 피해를 입힌다
+  Options:
+    MovementSpeed: 0.3 # 이동속도 보통 기준
+    AttackSpeed: 1
+    PreventSunburn : true
