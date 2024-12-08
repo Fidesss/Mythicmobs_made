@@ -1,7 +1,6 @@
 BasicSlime:
   Type: Zombie
   Health : 80
-  Damage : 0
   Display : "&f슬라임"
   Nameplate:
     Enabled: false
@@ -23,7 +22,6 @@ BasicSlime:
 SmallSlime:
   Type: Zombie
   Health : 40
-  Damage : 1  #여기 나중에 수정
   Display : "&f작은 슬라임"
   Nameplate:
     Enabled: false
@@ -44,7 +42,6 @@ SmallSlime:
 BubbleSlime:
   Type: Zombie
   Health : 20
-  Damage : 1  #여기 나중에 수정
   Display : "&f거품 슬라임"
   Nameplate:
     Enabled: false
@@ -66,7 +63,6 @@ BubbleSlime:
 SquareSlime:
   Type: Zombie
   Health : 150
-  Damage : 0
   Display : "&f네모 슬라임"
   Nameplate:
     Enabled: false
@@ -88,10 +84,9 @@ SquareSlime:
 BigSlime:
   Type: Zombie
   Health : 1000000
-  Damage : 0
   Display : "&f왕 슬라임"
   Nameplate:
-    Enabled: True
+    Enabled: false
   #방어력 스탯 5%
   Skills:
   - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack

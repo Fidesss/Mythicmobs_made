@@ -1,7 +1,9 @@
 BasicWolf:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠 (Wolf로 세팅후 Option Angry 적용 테스트 해봐야함)
   Health : 100
-  #방어력 스탯 3%
+  Display : "&f늑대"
+  Nameplate:
+    Enabled: false
   Skills:
     # 기본공격(2초) : 적을 물어서 60의 피해를 입힌다
   - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
@@ -13,10 +15,14 @@ BasicWolf:
   Options:
     MovementSpeed: 0.3 #이동속도 보통 기준
     AttackSpeed: 1
+    PreventSunburn : true
 
 WereWolf:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠 (Wolf로 세팅후 Option Angry 적용 테스트 해봐야함)
   Health : 1450
+  Display : "&f웨어울프"
+  Nameplate:
+    Enabled: false
   #방어력 스탯 5%
   #Skills:
     #기본공격(3초) : 양손으로 할퀴어서 145의 피해를 입힌다
@@ -34,7 +40,7 @@ WereWolf:
     monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 #이동속도 보통 기준
-    AttackSpeed: 1
+    PreventSunburn : true
   #보스바 테스트
   BossBar:
     Enabled: true

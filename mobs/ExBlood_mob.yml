@@ -1,7 +1,10 @@
 BasicBat:
-  Type: BAT # 박쥐로 세팅
+  Type: Phantom # 공격몹인 
   Health : 100
   #방어력 스탯 0%
+  Display : "&f박쥐"
+  Nameplate:
+    Enabled: false
   Skills:
     # 기본공격(5초) : 10칸의 거리에 초음파로 범위 공격을 해 100의 피해를 입힌다
   - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
@@ -12,19 +15,23 @@ BasicBat:
     monskill: int/100  #스킬
   Options:
     MovementSpeed: 0.35 # 이동속도 빠름 기준, 비행효과(추가해야함)
+    PreventSunburn : true
 
 BigSpider:
   Type: Spider # 거미로 세팅
   Health : 150
   #방어력 스탯 5%
+  Display : "&f큰 거미"
+  Nameplate:
+    Enabled: false
   Skills:
     # 기본공격(3초) :  다리로 적을 찔러 100의 피해를 입힌다
   - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
-    monno: int/0     #평타
-    monskill: int/70  #스킬
+    monno: int/70     #평타
+    monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
 
@@ -32,6 +39,9 @@ HungerDracula:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
   Health : 2000
   #방어력 스탯 5%
+  Display : "&f굶주린 드라큘라 자작"
+  Nameplate:
+   Enabled: false
   #Skills:
     # 기본공격 없음
     # 패턴주기 4~8초
@@ -41,13 +51,13 @@ HungerDracula:
     # 패턴4 박쥐소환 : 박쥐를 3마리 소환한다
     # 패턴5 피의축제 : 3초동안 준비자세를 취하고 넓은 범위에 피를 퍼트려 444의 피해를 입힌다
     # 패턴6 심장뽑기 : 손톱으로 적 한명의 심장을 뚫어 400의 피해를 입힌다
-
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
+    PreventSunburn : true
   #보스바 테스트
   BossBar:
     Enabled: true
-    Title: 'Hunger Dracula'
+    Title: '굶주린 드라큘라 자작'
     Range: 32
     Color: RED
     Style: SOLID
