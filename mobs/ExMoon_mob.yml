@@ -2,18 +2,17 @@ BasicWolf:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠 (Wolf로 세팅후 Option Angry 적용 테스트 해봐야함)
   Health : 100
   #방어력 스탯 3%
-  #Skills:
+  Skills:
     # 기본공격(2초) : 적을 물어서 60의 피해를 입힌다
+  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  Variables:
+    mondef: int/3     #방어력
+    monpen: int/0    #관통력
+    monno: int/0     #평타
+    monskill: int/60  #스킬
   Options:
-    MovementSpeed: 0.2 #이동속도 보통 기준
+    MovementSpeed: 0.3 #이동속도 보통 기준
     AttackSpeed: 1
-  #보스바 테스트
-  BossBar:
-    Enabled: true
-    Title: 'Basic Wolf'
-    Range: 32
-    Color: RED
-    Style: SOLID
 
 WereWolf:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠 (Wolf로 세팅후 Option Angry 적용 테스트 해봐야함)
@@ -27,8 +26,14 @@ WereWolf:
     # 패턴3 휩쓸기 : 손톱으로 전방을 휩쓸어 300의 피해를 입힌다
     # 패턴4 습격 : 2초동안 자세를 잡고 전방으로 점프해 적을 깨물어 400의 피해를 입힌다 
     # 패턴5 분노 : 10초동안 이동속도가 빨라지고 기본공격 주기가 1.5초 짧아진다 
+  Variables:
+  #보스 몬스터구문은 아직 안건드림
+    mondef: int/5     #방어력
+    monpen: int/0    #관통력
+    monno: int/0     #평타
+    monskill: int/0  #스킬
   Options:
-    MovementSpeed: 0.2 #이동속도 보통 기준
+    MovementSpeed: 0.3 #이동속도 보통 기준
     AttackSpeed: 1
   #보스바 테스트
   BossBar:

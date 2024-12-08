@@ -5,8 +5,14 @@ WarriorGoblin:
   Nameplate:
       Enabled: false
   #방어력 스탯 2%
-  #Skills:
+  Skills:
     # 기본공격(2초) : 방망이로 후려쳐 70의 피해를 입힌다
+  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  Variables:
+    mondef: int/2     #방어력
+    monpen: int/10    #관통력 
+    monno: int/70     #평타
+    monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
     AttackSpeed: 1
@@ -20,8 +26,14 @@ ShieldGoblin:
   Nameplate:
       Enabled: false
   #방어력 스탯 8%
-  #Skills:
+  Skills:
     # 기본공격(3초) : 방패로 밀쳐 40의 피해를 입힌다
+  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  Variables:
+    mondef: int/8     #방어력
+    monpen: int/0    #관통력 
+    monno: int/40     #평타
+    monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
     AttackSpeed: 1
@@ -29,14 +41,20 @@ ShieldGoblin:
 
 
 ArcherGoblin:
-  Type: Skeleton # 어떻게 될지 몰라 좀비로 둠
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠
   Health : 100
   Display : "&f궁수 고블린"
   Nameplate:
       Enabled: false
   #방어력 스탯 0%
-  #Skills:
+  Skills:
     # 기본공격(3초) : 10칸 거리에 활을 쏴 90의 피해를 입힌다
+  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monno: int/90     #평타
+    monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
     AttackSpeed: 1
