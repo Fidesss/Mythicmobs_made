@@ -1,0 +1,8 @@
+Wgs:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - message{m="스킬에 맞았습니다."} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
