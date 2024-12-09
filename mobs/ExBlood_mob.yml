@@ -7,7 +7,7 @@ BasicBat:
     Enabled: false
   Skills:
     # 기본공격(5초) : 10칸의 거리에 초음파로 범위 공격을 해 100의 피해를 입힌다
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Bbs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
@@ -26,7 +26,7 @@ BigSpider:
     Enabled: false
   Skills:
     # 기본공격(3초) :  다리로 적을 찔러 100의 피해를 입힌다
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Bss} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
@@ -42,7 +42,8 @@ HungerDracula:
   Display : "&f굶주린 드라큘라 자작"
   Nameplate:
    Enabled: false
-  #Skills:
+  Skills:
+  - skill{s=Hds} @PIR{r=10} ~onTimer:40
     # 기본공격 없음
     # 패턴주기 4~8초
     # 패턴1 흡혈 : 2초동안 준비자세를 취하고 주변 적에게 100의 피해를 입히고 HP를 100 회복한다 ( 중복회복 가능 )

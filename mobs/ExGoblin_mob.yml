@@ -6,13 +6,12 @@ WarriorGoblin:
   Nameplate:
       Enabled: false
   #방어력 스탯 2%
-  
-    # 기본공격(2초) : 방망이로 후려쳐 70의 피해를 입힌다
+  # 기본공격(2초) : 방망이로 후려쳐 70의 피해를 입힌다
   Skills:
   - skill{s=Wgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/2     #방어력
-    monpen: int/10    #관통력 
+    monpen: int/0    #관통력 
     monno: int/70     #평타
     monskill: int/0  #스킬
   Options:
@@ -30,7 +29,7 @@ ShieldGoblin:
   #방어력 스탯 8%
   Skills:
     # 기본공격(3초) : 방패로 밀쳐 40의 피해를 입힌다
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Sgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/8     #방어력
     monpen: int/0    #관통력 
@@ -51,7 +50,7 @@ ArcherGoblin:
   #방어력 스탯 0%
   Skills:
     # 기본공격(3초) : 10칸 거리에 활을 쏴 90의 피해를 입힌다
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Ags} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 

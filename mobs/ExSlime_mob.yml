@@ -7,7 +7,7 @@ BasicSlime:
   #방어력 스탯 0%
   Skills:
     #기본공격 (2초에 한번씩) : 통통 튀면서 몸통박치기를해 40의 피해를 입힌다.
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Bsgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
@@ -28,7 +28,7 @@ SmallSlime:
   #방어력 스탯 0%
   Skills:
     #기본공격 (2초에 한번씩) : 통통 튀면서 몸통박치기를해 40의 피해를 입힌다.
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Ssgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
@@ -49,7 +49,7 @@ BubbleSlime:
   Skills:
     #기본공격 없음
     #사망할때 터지면서 주변에 100의 피해를 입힌다. << 스킬에해당?
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Bbsgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
@@ -69,7 +69,7 @@ SquareSlime:
   #방어력 스탯 0%
   Skills:
     #기본공격 (4초에 한번씩) : 높이 뛰어올라 내려오면서 주변에 70의 피해를 준다.
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Sqsgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
@@ -89,13 +89,13 @@ BigSlime:
     Enabled: false
   #방어력 스탯 5%
   Skills:
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Ksgs} @PIR{r=10} ~onTimer:40
     #패턴주기 5~10초
+    #패턴1 점프점프 : 적을향해 총 3번 뛰어오르고 내려오면서 주변에 130의 피해를 입힌다
     #패턴2 가두기 : 5초동안 몸 안에 적 한명을 가둬서 아무런 행동을 할 수 없게 만든다
     #패턴3 물대포 : 20칸의 거리에 물대포를 발사해 300의 피해를 입힌다
     #패턴4 분열 : 자신의 HP를 5% 소모하고 슬라임을 랜덤으로 5마리 소환한다
     #패턴5 흡수 : 5초동안 아무런 행동을 하지않지만 이때 피해를 받으면 HP를 30% 회복한다 
-    #패턴1 점프점프 : 적을향해 총 3번 뛰어오르고 내려오면서 주변에 130의 피해를 입힌다
   Options:
     Size: 20
     MovementSpeed: 0.3 #이동속도 보통 기준

@@ -6,7 +6,7 @@ BasicDog:
     Enabled: false
   Skills:
     #기본공격 (2초에 한번씩) : 적을 물어뜯어 80의 피해를 입힌다.
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Bds} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/2     #방어력
     monpen: int/0    #관통력
@@ -16,7 +16,7 @@ BasicDog:
     MovementSpeed: 0.3 #이동속도 보통 기준
 
 
-BasicBear:
+BasicBigBear:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
   Health : 130
   #방어력 스탯 3%
@@ -25,7 +25,7 @@ BasicBear:
     Enabled: false
   Skills:
     #기본공격 (2초에 한번씩) : 적을 할퀴어서 100의 피해를 입힌다.
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Bbbs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/3     #방어력
     monpen: int/0    #관통력
@@ -44,7 +44,7 @@ BasicEagle:
     Enabled: false
   Skills:
     #기본공격 (5초에 한번씩) : 적에게 돌진해 110의 피해를 입히고 다시 비행한다
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Egs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
@@ -63,7 +63,7 @@ BasicTurtle:
     Enabled: false
   Skills:
     #기본공격 : 적과 부딪히면 100의 피해를 입힘
-  - skill{s=DAMAGEMONNO;setcasterastrigger=true} @Target ~onattack
+  - skill{s=Tgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/10     #방어력
     monpen: int/0    #관통력
@@ -79,7 +79,8 @@ KingLion:
   Display : "&f동물의 왕 사자"
   Nameplate:
     Enabled: false
-  #Skills:
+  Skills:
+  - skill{s=Kls} @PIR{r=10} ~onTimer:40
     # 기본공격(3초) : 물어서 적에게 110의 피해를 입힌다.
     # 패턴주기 10~12초
     # 패턴1 포효 : 크게 소리쳐 넓은 반경의 적에게 100의 피해를 입힌다
@@ -91,7 +92,7 @@ KingLion:
   #보스 몬스터구문은 아직 안건드림
     mondef: int/5     #방어력
     monpen: int/0    #관통력
-    monno: int/0     #평타
+    monno: int/110     #평타
     monskill: int/0  #스킬
   Options:
       MovementSpeed: 0.3 #이동속도 보통 기준
