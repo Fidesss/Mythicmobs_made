@@ -1,6 +1,7 @@
 BasicDog:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
   Health : 90
+  Damage : 0
   Display : "&f들개"
   Nameplate:
     Enabled: false
@@ -14,11 +15,13 @@ BasicDog:
     monskill: int/80  #스킬
   Options:
     MovementSpeed: 0.3 #이동속도 보통 기준
+    PreventSunburn : true
 
 
 BasicBigBear:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
   Health : 130
+  Damage : 0
   #방어력 스탯 3%
   Display : "&f곰"
   Nameplate:
@@ -33,18 +36,20 @@ BasicBigBear:
     monskill: int/100  #스킬
   Options:
     MovementSpeed: 0.23 #이동속도 느림 기준
+    PreventSunburn : true
 
 #독수리에는 비행이라는 특이점이 있는데 이건 어떻게 할지 고민
 BasicEagle:
   Type: Phantom # 어떻게 될지 몰라 좀비로 둠
   Health : 60
+  Damage : 0
   #방어력 스탯 0%
   Display : "&f독수리"
   Nameplate:
     Enabled: false
   Skills:
     #기본공격 (5초에 한번씩) : 적에게 돌진해 110의 피해를 입히고 다시 비행한다
-  - skill{s=Egs} @PIR{r=10} ~onTimer:40
+  - skill{s=Bes} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
@@ -57,13 +62,14 @@ BasicEagle:
 BasicTurtle:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
   Health : 90
+  Damage : 0
   #방어력 스탯 10%
   Display : "&f거북이"
   Nameplate:
     Enabled: false
   Skills:
     #기본공격 : 적과 부딪히면 100의 피해를 입힘
-  - skill{s=Tgs} @PIR{r=10} ~onTimer:40
+  - skill{s=Bts} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/10     #방어력
     monpen: int/0    #관통력
@@ -71,10 +77,12 @@ BasicTurtle:
     monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.23 #이동속도 매우느림 기준
+    PreventSunburn : true
 
 KingLion:
   Type : Zombie
   Health : 1450
+  Damage : 0
   #방어력 스탯 5%
   Display : "&f동물의 왕 사자"
   Nameplate:
