@@ -7,7 +7,8 @@ Wgs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="전사 고블린 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  #- message{m="전사 고블린 스킬에 맞았습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
 # 방패 고블린
@@ -17,7 +18,8 @@ Sgs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="방패 고블린 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  #- message{m="방패 고블린 스킬에 맞았습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
 # 궁수 고블린
@@ -27,7 +29,8 @@ Ags:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="궁수 고블린 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  # - message{m="궁수 고블린 스킬에 맞았습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
 # 달빛이 비추는 언덕
@@ -39,7 +42,8 @@ Bws:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="늑대 스킬 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="늑대 스킬 스킬에 맞았습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
 # 보스몬스터
@@ -51,7 +55,8 @@ Wws:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="웨어울프 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="웨어울프 스킬에 맞았습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
 #피가 흐르는 동굴
@@ -63,7 +68,8 @@ Bbs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="박쥐 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="박쥐 스킬에 맞았습니다."} @PIR{r=10}
 
 # 큰 거미
 Bss:
@@ -72,7 +78,8 @@ Bss:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="큰 거미 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="큰 거미 스킬에 맞았습니다."} @PIR{r=10}
 
 # 보스몬스터
 
@@ -83,7 +90,8 @@ Hds:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="굶주린 드라큘라 자작 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="굶주린 드라큘라 자작 스킬에 맞았습니다."} @PIR{r=10}
 
 #울창한 숲
 
@@ -94,7 +102,8 @@ Bds:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="들개 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="들개 스킬에 맞았습니다."} @PIR{r=10}
 
 # 곰
 Bbbs:
@@ -103,7 +112,8 @@ Bbbs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="곰 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="곰 스킬에 맞았습니다."} @PIR{r=10}
 
 # 독수리
 Bes:
@@ -112,7 +122,8 @@ Bes:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="독수리 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="독수리 스킬에 맞았습니다."} @PIR{r=10}
 
 # 거북이
 Bts:
@@ -121,7 +132,8 @@ Bts:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="거북이 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="거북이 스킬에 맞았습니다."} @PIR{r=10}
 
 # 보스몬스터
 
@@ -132,7 +144,8 @@ Kls:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="동물의 왕 사자 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="동물의 왕 사자 스킬에 맞았습니다."} @PIR{r=10}
 
 # 슬라임 던전
 
@@ -143,7 +156,8 @@ Bsgs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="슬라임 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="슬라임 스킬에 맞았습니다."} @PIR{r=10}
 
 # 작은 슬라임
 Ssgs:
@@ -152,7 +166,8 @@ Ssgs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="작은 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="작은 슬라임 스킬에 맞았습니다."} @PIR{r=10}
 
 # 거품 슬라임
 Bbsgs:
@@ -161,7 +176,8 @@ Bbsgs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="거품 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="거품 슬라임 스킬에 맞았습니다."} @PIR{r=10}
 
 # 네모 슬라임
 Sqsgs:
@@ -170,7 +186,8 @@ Sqsgs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="네모 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    #- message{m="네모 슬라임 스킬에 맞았습니다."} @PIR{r=10}
 
 # 보스몬스터
 
@@ -181,4 +198,5 @@ Ksgs:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="왕 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+    # - message{m="왕 슬라임 스킬에 맞았습니다."} @PIR{r=10}
