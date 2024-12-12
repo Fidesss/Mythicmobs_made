@@ -33,6 +33,15 @@ Ags:
   # - message{m="궁수 고블린 스킬에 맞았습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
+Bwgs:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  # - message{m="마법사 고블린 스킬에 맞았습니다."} @PIR{r=10}
+
 # 달빛이 비추는 언덕
 
 # 늑대 스킬
