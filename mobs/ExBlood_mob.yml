@@ -1,57 +1,61 @@
 BasicBat:
   Type: Phantom # 공격몹인 
-  Health : 100
-  #방어력 스탯 0%
+  Health : 50
   Display : "&f박쥐"
   Nameplate:
     Enabled: false
   Skills:
-    # 기본공격(5초) : 10칸의 거리에 초음파로 범위 공격을 해 100의 피해를 입힌다
+    # 기본공격(5초) : 10칸의 거리에 초음파로 범위 공격을 해 50의 피해를 입힌다
   - skill{s=Bbs} @PIR{r=10} ~onTimer:40
   Variables:
+  #방어력 스탯 0%
     mondef: int/0     #방어력
     monpen: int/0    #관통력
     monno: int/0     #평타
     monskill: int/100  #스킬
   Options:
-    MovementSpeed: 0.35 # 이동속도 빠름 기준, 비행효과(추가해야함)
+    MovementSpeed: 0.3 # 이동속도 보통 기준, 비행효과
     PreventSunburn : true
 
 BigSpider:
   Type: Spider # 거미로 세팅
-  Health : 150
-  #방어력 스탯 5%
+  Health : 120
   Display : "&f큰 거미"
   Nameplate:
     Enabled: false
   Skills:
-    # 기본공격(3초) :  다리로 적을 찔러 100의 피해를 입힌다
+    # 기본공격(3초) : 다리로 적을 찔러 100의 피해를 입힌다
   - skill{s=Bss} @PIR{r=10} ~onTimer:40
   Variables:
+  #방어력 스탯 0%
     mondef: int/0     #방어력
     monpen: int/0    #관통력
-    monno: int/70     #평타
+    monno: int/100     #평타
     monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
 
 HungerDracula:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
-  Health : 2000
-  #방어력 스탯 5%
+  Health : 1000
   Display : "&f굶주린 드라큘라 자작"
   Nameplate:
    Enabled: false
   Skills:
   - skill{s=Hds} @PIR{r=10} ~onTimer:40
     # 기본공격 없음
-    # 패턴주기 4~8초
-    # 패턴1 흡혈 : 2초동안 준비자세를 취하고 주변 적에게 100의 피해를 입히고 HP를 100 회복한다 ( 중복회복 가능 )
-    # 패턴2 블러드 스피어 : 피로만든 창을 다섯 갈래로 날려 220의 피해를 입힌다
-    # 패턴3 비행 : 날개를 펼쳐 20초동안 빠르게 비행한다
+    # 패턴주기 5~10초
+    # 패턴1 흡혈 : 적 한명에게 150의 피해를 입히고 HP를 50 회복한다
+    # 패턴2 블러드 스피어 : 피로만든 창을 다섯 갈래로 날려 125의 피해를 입힌다
+    # 패턴3 비행 : 날개를 펼쳐 다음 패턴까지 빠르게 비행한다
     # 패턴4 박쥐소환 : 박쥐를 3마리 소환한다
     # 패턴5 피의축제 : 3초동안 준비자세를 취하고 넓은 범위에 피를 퍼트려 444의 피해를 입힌다
-    # 패턴6 심장뽑기 : 손톱으로 적 한명의 심장을 뚫어 400의 피해를 입힌다
+  Variables:
+    #방어력 스탯 5%
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력
+    monno: int/100     #평타
+    monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
     PreventSunburn : true
