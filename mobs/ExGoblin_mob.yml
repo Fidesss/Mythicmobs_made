@@ -71,7 +71,7 @@ WizardGoblin:
     Enabled: false
   Skills:
     # 기본공격(7초) : 12칸 거리에 마력탄을 발사해 90의 피해를 입힌다
-  - skill{s=Wgs} @PIR{r=10} ~onTimer:40
+  - skill{s=Bwgs} @PIR{r=10} ~onTimer:40
   Variables:
   #방어력 스탯 0%
     mondef: int/0
