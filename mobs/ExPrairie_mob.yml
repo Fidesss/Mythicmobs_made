@@ -1,18 +1,19 @@
 BasicDog:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
-  Health : 90
+  Health : 50
   Damage : 0
   Display : "&f들개"
   Nameplate:
     Enabled: false
   Skills:
-    #기본공격 (2초에 한번씩) : 적을 물어뜯어 80의 피해를 입힌다.
+    #기본공격 (2초에 한번씩) : 적을 물어뜯어 30의 피해를 입힌다.
   - skill{s=Bds} @PIR{r=10} ~onTimer:40
   Variables:
-    mondef: int/2     #방어력
+  # 방어력 0%
+    mondef: int/0     #방어력
     monpen: int/0    #관통력
     monno: int/0     #평타
-    monskill: int/80  #스킬
+    monskill: int/30  #스킬
   Options:
     MovementSpeed: 0.3 #이동속도 보통 기준
     PreventSunburn : true
@@ -20,60 +21,60 @@ BasicDog:
 
 BasicBigBear:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
-  Health : 130
+  Health : 70
   Damage : 0
-  #방어력 스탯 3%
   Display : "&f곰"
   Nameplate:
     Enabled: false
   Skills:
-    #기본공격 (2초에 한번씩) : 적을 할퀴어서 100의 피해를 입힌다.
+    #기본공격 (2초에 한번씩) : 적을 할퀴어서 55의 피해를 입힌다.
   - skill{s=Bbbs} @PIR{r=10} ~onTimer:40
   Variables:
-    mondef: int/3     #방어력
+  #방어력 스탯 0%
+    mondef: int/0     #방어력
     monpen: int/0    #관통력
     monno: int/0     #평타
-    monskill: int/100  #스킬
+    monskill: int/55  #스킬
   Options:
     MovementSpeed: 0.23 #이동속도 느림 기준
     PreventSunburn : true
 
 #독수리에는 비행이라는 특이점이 있는데 이건 어떻게 할지 고민
 BasicEagle:
-  Type: Phantom # 어떻게 될지 몰라 좀비로 둠
-  Health : 60
+  Type: Phantom 
+  Health : 45
   Damage : 0
-  #방어력 스탯 0%
   Display : "&f독수리"
   Nameplate:
     Enabled: false
   Skills:
-    #기본공격 (5초에 한번씩) : 적에게 돌진해 110의 피해를 입히고 다시 비행한다
+    #기본공격 (5초에 한번씩) : 적에게 돌진해 80의 피해를 입히고 다시 비행한다
   - skill{s=Bes} @PIR{r=10} ~onTimer:40
   Variables:
+  #방어력 스탯 0%
     mondef: int/0     #방어력
     monpen: int/0    #관통력
     monno: int/0     #평타
-    monskill: int/110  #스킬
+    monskill: int/80  #스킬
   Options:
     MovementSpeed: 0.3 #이동속도 보통 기준
     PreventSunburn : true
 
 BasicTurtle:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
-  Health : 90
+  Health : 100
   Damage : 0
-  #방어력 스탯 10%
   Display : "&f거북이"
   Nameplate:
     Enabled: false
   Skills:
-    #기본공격 : 적과 부딪히면 100의 피해를 입힘
+    #기본공격 : 적과 부딪히면 60의 피해를 입힘
   - skill{s=Bts} @PIR{r=10} ~onTimer:40
   Variables:
-    mondef: int/10     #방어력
+  #방어력 스탯 0%
+    mondef: int/0     #방어력
     monpen: int/0    #관통력
-    monno: int/100     #평타
+    monno: int/60     #평타
     monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.23 #이동속도 매우느림 기준
@@ -81,7 +82,7 @@ BasicTurtle:
 
 KingLion:
   Type : Zombie
-  Health : 1450
+  Health : 1000
   Damage : 0
   #방어력 스탯 5%
   Display : "&f동물의 왕 사자"
@@ -89,18 +90,18 @@ KingLion:
     Enabled: false
   Skills:
   - skill{s=Kls} @PIR{r=10} ~onTimer:40
-    # 기본공격(3초) : 물어서 적에게 110의 피해를 입힌다.
-    # 패턴주기 10~12초
+    # 패턴주기 5~10초
     # 패턴1 포효 : 크게 소리쳐 넓은 반경의 적에게 100의 피해를 입힌다
-    # 패턴2 사냥 : 2초동안 자세를 잡고 앞으로 뛰어들어 300의 피해를 입힌다 
+    # 패턴2 사냥 : 2초동안 자세를 잡고 앞으로 뛰어들어 250의 피해를 입힌다 
     # 패턴3 추격 : 10초동안 이동속도가 빨라진다
-    # 패턴4 할퀴기 : 앞으로 이동하면서 5번 할퀴고 한번에 80의 피해를 입힌다
-    # 패턴5 던지기 : 적을 물어서 멀리 던지고 150의 피해를 입힌다
+    # 패턴4 할퀴기 : 앞으로 이동하면서 5번 할퀴고 한번에 60의 피해를 입힌다
+    # 패턴5 던지기 : 적을 물어서 멀리 던지고 180의 피해를 입힌다
+
   Variables:
   #보스 몬스터구문은 아직 안건드림
     mondef: int/5     #방어력
     monpen: int/0    #관통력
-    monno: int/110     #평타
+    monno: int/0     #평타
     monskill: int/0  #스킬
   Options:
       MovementSpeed: 0.3 #이동속도 보통 기준
