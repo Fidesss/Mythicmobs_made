@@ -1,18 +1,18 @@
 WarriorGoblin:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
-  Health : 120
+  Health : 60
   Display : "&f전사 고블린"
   Damage : 0
   Nameplate:
       Enabled: false
-  #방어력 스탯 2%
-  # 기본공격(2초) : 방망이로 후려쳐 70의 피해를 입힌다
+  # 기본공격(2초) : 방망이로 후려쳐 50의 피해를 입힌다
   Skills:
   - skill{s=Wgs} @PIR{r=10} ~onTimer:40
   Variables:
-    mondef: int/2     #방어력
+  #방어력 스탯 0%
+    mondef: int/0     #방어력
     monpen: int/0    #관통력 
-    monno: int/70     #평타
+    monno: int/50     #평타
     monskill: int/0  #스킬
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
@@ -22,16 +22,16 @@ WarriorGoblin:
 
 ShieldGoblin:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
-  Health : 180
+  Health : 90
   Display : "&f방패 고블린"
   Nameplate:
       Enabled: false
-  #방어력 스탯 8%
   Skills:
-    # 기본공격(3초) : 방패로 밀쳐 40의 피해를 입힌다
+    # 기본공격(3초) : 방패로 밀쳐 30의 피해를 입힌다
   - skill{s=Sgs} @PIR{r=10} ~onTimer:40
   Variables:
-    mondef: int/8     #방어력
+  #방어력 스탯 5%
+    mondef: int/5     #방어력
     monpen: int/0    #관통력 
     monno: int/40     #평타
     monskill: int/0  #스킬
@@ -43,19 +43,41 @@ ShieldGoblin:
 
 ArcherGoblin:
   Type: Zombie # 어떻게 될지 몰라 좀비로 둠
-  Health : 100
+  Health : 35
   Display : "&f궁수 고블린"
   Nameplate:
       Enabled: false
-  #방어력 스탯 0%
   Skills:
-    # 기본공격(3초) : 10칸 거리에 활을 쏴 90의 피해를 입힌다
+    # 기본공격(3초) : 10칸 거리에 활을 쏴 75의 피해를 입힌다
   - skill{s=Ags} @PIR{r=10} ~onTimer:40
   Variables:
+  #방어력 스탯 0%
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
-    monno: int/90     #평타
+    monno: int/75     #평타
     monskill: int/0  #스킬
+  Options:
+    MovementSpeed: 0.3 # 이동속도 보통 기준
+    AttackSpeed: 1
+    PreventSunburn : true
+
+# 법사 고블린 추가해야함
+
+WizardGoblin:
+  Type: Zombie
+  Health: 35
+  Display : "&f법사 고블린"
+  Nameplate:
+    Enabled: false
+  Skills:
+    # 기본공격(7초) : 12칸 거리에 마력탄을 발사해 90의 피해를 입힌다
+  - skill{s=Wgs} @PIR{r=10} ~onTimer:40
+  Variables:
+  #방어력 스탯 0%
+    mondef: int/0
+    monpen: int/0
+    monno: int/0
+    monskill: int/90
   Options:
     MovementSpeed: 0.3 # 이동속도 보통 기준
     AttackSpeed: 1
