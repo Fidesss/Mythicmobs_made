@@ -1,5 +1,5 @@
 BasicSlime:
-  Type: Zombie
+  Type: Slime
   Health : 80
   Display : "&f슬라임"
   Nameplate:
@@ -20,27 +20,27 @@ BasicSlime:
 
 
 SmallSlime:
-  Type: Zombie
+  Type: Slime
   Health : 40
   Display : "&f작은 슬라임"
   Nameplate:
     Enabled: false
   #방어력 스탯 0%
   Skills:
-    #기본공격 (2초에 한번씩) : 통통 튀면서 몸통박치기를해 40의 피해를 입힌다.
+    #기본공격(2초) : 통통 튀면서 몸통박치기를해 25의 피해를 입힌다
   - skill{s=Ssgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력
-    monno: int/40     #평타
-    monskill: int/25  #스킬
+    monno: int/25     #평타
+    monskill: int/0  #스킬
   Options:
     Size: 1
     MovementSpeed: 0.35 #이동속도 빠름 기준
     PreventSlimeSplit: true
 
 BubbleSlime:
-  Type: Zombie
+  Type: Slime
   Health : 20
   Display : "&f거품 슬라임"
   Nameplate:
@@ -48,7 +48,7 @@ BubbleSlime:
   #방어력 스탯 0%
   Skills:
     #기본공격 없음
-    #사망할때 터지면서 주변에 100의 피해를 입힌다. << 스킬에해당?
+    #사망할때 터지면서 주변에 100의 피해를 입힌다.
   - skill{s=Bbsgs} @PIR{r=10} ~onTimer:40
   Variables:
     mondef: int/0     #방어력
@@ -61,7 +61,7 @@ BubbleSlime:
     PreventSlimeSplit: true
 
 SquareSlime:
-  Type: Zombie
+  Type: Slime
   Health : 150
   Display : "&f네모 슬라임"
   Nameplate:
@@ -82,8 +82,8 @@ SquareSlime:
 
 #보스 슬라임
 BigSlime:
-  Type: Zombie
-  Health : 1000000
+  Type: Slime
+  Health : 1000
   Display : "&f왕 슬라임"
   Nameplate:
     Enabled: false
