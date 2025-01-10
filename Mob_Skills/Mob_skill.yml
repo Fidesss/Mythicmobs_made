@@ -1,3 +1,12 @@
+# 에니메이션 몹 테스트 구문
+BGolem:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+    #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - message{m="테스트 골렘에게 공격당했습니다."} @PIR{r=2}
 # 모험가 Ep 1
 Bslime:
   TargetLocations:
@@ -5,9 +14,8 @@ Bslime:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  - message{m="일반 슬라임에게 공격당했습니다."} @PIR{r=10}
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - message{m="일반 슬라임에게 공격당했습니다."} @PIR{r=2}
 
 BdarkPriest:
   TargetLocations:
@@ -15,9 +23,8 @@ BdarkPriest:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  - message{m="검은 로브 사제에게 공격당했습니다."} @PIR{r=10}
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=5}
+  - message{m="검은 로브 사제에게 공격당했습니다."} @PIR{r=5}
 
 # 모험가 Ep 2
 BGoblin:
@@ -26,9 +33,8 @@ BGoblin:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  - message{m="일반 고블린 에게 공격당했습니다."} @PIR{r=10}
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - message{m="일반 고블린에게 공격당했습니다."} @PIR{r=2}
 
 Bwolf:
   TargetLocations:
@@ -36,9 +42,8 @@ Bwolf:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  - message{m="굶주린 늑대에게 공격당했습니다."} @PIR{r=10}
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - message{m="굶주린 늑대에게 공격당했습니다."} @PIR{r=2}
 
 # 모험가 Ep 3
 BDevil:
@@ -47,7 +52,8 @@ BDevil:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="일반 악마에게 공격당했습니다."} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - message{m="악마에게 공격당했습니다."} @PIR{r=1}
 #-------------------------------------------------------------------------------------------
 ## 고블린 던전
 #
