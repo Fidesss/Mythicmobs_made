@@ -1,0 +1,22 @@
+B_Devil:
+  Type: Zombie
+  Health : 80
+  Display : "&f악마"
+  Damage : 0
+  Nameplate:
+    Enabled: false
+  #방어력 스탯 0%
+  Skills:
+    #기본공격 (2초에 한번씩) : 평타를 때린다.
+  - skill{s=BDevil} @PIR{r=10} ~onTimer:40
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monno: int/10     #평타
+    monskill: int/0  #스킬
+  Options:
+    Size: 3
+    MovementSpeed: 0.23 #이동속도 느림 기준
+    PreventSunburn : true
+    PreventItemPickup: true
+    PreventRandomEquipment: true

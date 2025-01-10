@@ -1,0 +1,45 @@
+B_Goblin:
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠
+  Health : 60
+  Display : "&f일반 고블린"
+  Damage : 0
+  Nameplate:
+      Enabled: false
+  # 기본공격(2초) : 방망이로 후려치는 평타
+  Skills:
+  - skill{s=BGoblin} @PIR{r=10} ~onTimer:40
+  Variables:
+  #방어력 스탯 0%
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monno: int/10     #평타
+    monskill: int/0  #스킬
+  Options:
+    MovementSpeed: 0.3 # 이동속도 보통 기준
+    AttackSpeed: 1
+    PreventSunburn : true
+    PreventItemPickup: true
+    PreventRandomEquipment: true
+
+B_Wolf:
+  Type: Zombie # 어떻게 될지 몰라 좀비로 둠
+  Health : 50
+  Display : "&f굶주린 늑대"
+  Damage : 0
+  Nameplate:
+      Enabled: false
+  # 기본공격(2초) : 방망이로 후려치는 평타
+  Skills:
+  - skill{s=Bwolf} @PIR{r=10} ~onTimer:40
+  Variables:
+  #방어력 스탯 0%
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력
+    monno: int/10     #평타
+    monskill: int/0  #스킬
+  Options:
+    MovementSpeed: 0.3 # 이동속도 보통 기준
+    AttackSpeed: 1
+    PreventSunburn : true
+    PreventItemPickup: true
+    PreventRandomEquipment: true
