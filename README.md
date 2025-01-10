@@ -1,3 +1,3 @@
 # Mythicmobs_made
 ### 📜Make Minecraft Mobs
-> Practice Mythicmobs
+> Rpg Server Mob
