@@ -1,211 +1,262 @@
-# 고블린 던전
-
-# 전사 고블린
-Wgs:
+# 모험가 Ep 1
+Bslime:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  #- message{m="전사 고블린 스킬에 맞았습니다."} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  - message{m="일반 슬라임에게 공격당했습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
-# 방패 고블린
-Sgs:
+BdarkPriest:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  #- message{m="방패 고블린 스킬에 맞았습니다."} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  - message{m="검은 로브 사제에게 공격당했습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
-# 궁수 고블린
-Ags:
+# 모험가 Ep 2
+BGoblin:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  # - message{m="궁수 고블린 스킬에 맞았습니다."} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  - message{m="일반 고블린 에게 공격당했습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
-Bwgs:
+Bwolf:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-  # - message{m="마법사 고블린 스킬에 맞았습니다."} @PIR{r=10}
-
-# 달빛이 비추는 언덕
-
-# 늑대 스킬
-Bws:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="늑대 스킬 스킬에 맞았습니다."} @PIR{r=10}
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+  - message{m="굶주린 늑대에게 공격당했습니다."} @PIR{r=10}
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
 
-# 보스몬스터
-
-# 웨어울프 스킬
-Wws:
+# 모험가 Ep 3
+BDevil:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="웨어울프 스킬에 맞았습니다."} @PIR{r=10}
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-
-#피가 흐르는 동굴
-
-# 박쥐
-Bbs:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="박쥐 스킬에 맞았습니다."} @PIR{r=10}
-
-# 큰 거미
-Bss:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="큰 거미 스킬에 맞았습니다."} @PIR{r=10}
-
-# 보스몬스터
-
-# 굶주린 드라큘라 자작
-Hds:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="굶주린 드라큘라 자작 스킬에 맞았습니다."} @PIR{r=10}
-
-#울창한 숲
-
-# 들개
-Bds:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="들개 스킬에 맞았습니다."} @PIR{r=10}
-
-# 곰
-Bbbs:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="곰 스킬에 맞았습니다."} @PIR{r=10}
-
-# 독수리
-Bes:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="독수리 스킬에 맞았습니다."} @PIR{r=10}
-
-# 거북이
-Bts:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="거북이 스킬에 맞았습니다."} @PIR{r=10}
-
-# 보스몬스터
-
-# 동물의 왕 사자
-Kls:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="동물의 왕 사자 스킬에 맞았습니다."} @PIR{r=10}
-
-# 슬라임 던전
-
-# 슬라임
-Bsgs:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="슬라임 스킬에 맞았습니다."} @PIR{r=10}
-
-# 작은 슬라임
-Ssgs:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="작은 슬라임 스킬에 맞았습니다."} @PIR{r=10}
-
-# 거품 슬라임
-Bbsgs:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="거품 슬라임 스킬에 맞았습니다."} @PIR{r=10}
-
-# 네모 슬라임
-Sqsgs:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    #- message{m="네모 슬라임 스킬에 맞았습니다."} @PIR{r=10}
-
-# 보스몬스터
-
-# 왕 슬라임
-Ksgs:
-  TargetLocations:
-  - distance{d=<10} true
-  Condition:
-  - hasaura{n=stun} false
-  Skills:
-  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
-    # - message{m="왕 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+  - message{m="일반 악마에게 공격당했습니다."} @PIR{r=10}
+#-------------------------------------------------------------------------------------------
+## 고블린 던전
+#
+## 전사 고블린
+#Wgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#  #- message{m="전사 고블린 스킬에 맞았습니다."} @PIR{r=10}
+#  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#
+## 방패 고블린
+#Sgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#  #- message{m="방패 고블린 스킬에 맞았습니다."} @PIR{r=10}
+#  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#
+## 궁수 고블린
+#Ags:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#  # - message{m="궁수 고블린 스킬에 맞았습니다."} @PIR{r=10}
+#  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#
+#Bwgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#  # - message{m="마법사 고블린 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 달빛이 비추는 언덕
+#
+## 늑대 스킬
+#Bws:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="늑대 스킬 스킬에 맞았습니다."} @PIR{r=10}
+#  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#
+## 보스몬스터
+#
+## 웨어울프 스킬
+#Wws:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="웨어울프 스킬에 맞았습니다."} @PIR{r=10}
+#  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#
+##피가 흐르는 동굴
+#
+## 박쥐
+#Bbs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="박쥐 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 큰 거미
+#Bss:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="큰 거미 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 보스몬스터
+#
+## 굶주린 드라큘라 자작
+#Hds:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="굶주린 드라큘라 자작 스킬에 맞았습니다."} @PIR{r=10}
+#
+##울창한 숲
+#
+## 들개
+#Bds:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="들개 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 곰
+#Bbbs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="곰 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 독수리
+#Bes:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="독수리 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 거북이
+#Bts:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="거북이 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 보스몬스터
+#
+## 동물의 왕 사자
+#Kls:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="동물의 왕 사자 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 슬라임 던전
+#
+## 슬라임
+#Bsgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="슬라임 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 작은 슬라임
+#Ssgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="작은 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 거품 슬라임
+#Bbsgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="거품 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 네모 슬라임
+#Sqsgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    #- message{m="네모 슬라임 스킬에 맞았습니다."} @PIR{r=10}
+#
+## 보스몬스터
+#
+## 왕 슬라임
+#Ksgs:
+#  TargetLocations:
+#  - distance{d=<10} true
+#  Condition:
+#  - hasaura{n=stun} false
+#  Skills:
+#  - sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=10}
+#    # - message{m="왕 슬라임 스킬에 맞았습니다."} @PIR{r=10}
