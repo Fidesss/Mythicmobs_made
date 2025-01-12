@@ -36,7 +36,7 @@ B_DarkPriest:
     monno: int/10     #평타
     monskill: int/0  #스킬
   Options:
-    MovementSpeed: 0.23 #이동속도 느림
+    MovementSpeed: 0.28 #이동속도 보통
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
