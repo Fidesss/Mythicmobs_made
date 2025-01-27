@@ -1,0 +1,62 @@
+B_Slime:
+  Type: Slime
+  Health : 10
+  Display : "&f큰 슬라임"
+  Damage : 0
+  Nameplate:
+    Enabled: false
+  #방어력 스탯 0%
+  Skills:
+    #기본공격 (2초에 한번씩) : 평타를 때린다.
+  - skill{s=BigSlime} @PIR{r=2} ~onTimer:30
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monno: int/10     #평타
+    monskill: int/0  #스킬
+  Options:
+    Size: 3
+    MovementSpeed: 0.28 #이동속도 보통 기준
+    PreventSlimeSplit: true
+
+M_Slime:
+  Type: Slime
+  Health : 10
+  Display : "&f이끼 슬라임"
+  Damage : 0
+  Nameplate:
+    Enabled: false
+  #방어력 스탯 0%
+  Skills:
+    #기본공격 (2초에 한번씩) : 평타를 때린다.
+  - skill{s=MossSlime} @PIR{r=2} ~onTimer:30
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monno: int/10     #평타
+    monskill: int/0  #스킬
+  Options:
+    Size: 3
+    MovementSpeed: 0.28 #이동속도 보통 기준
+    PreventSlimeSplit: true
+
+S_Slime:
+  Type: Slime
+  Health : 10
+  Display : "&f네모 슬라임"
+  Damage : 0
+  Nameplate:
+    Enabled: false
+  #방어력 스탯 0%
+  Skills:
+    #기본공격 (2초에 한번씩) : 평타를 때린다.
+  - skill{s=SquareSlime} @PIR{r=2} ~onTimer:30
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monno: int/10     #평타
+    monskill: int/0  #스킬
+  Options:
+    Size: 3
+    MovementSpeed: 0.28 #이동속도 보통 기준
+    PreventSlimeSplit: true
