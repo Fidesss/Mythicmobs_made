@@ -1,6 +1,6 @@
 B_Golem:
-  Type: Zombie
-  Health : 80
+  Type: zombie
+  Health : 20
   Display : "&f테스트 골렘"
   Damage : 0
   Nameplate:
@@ -8,7 +8,7 @@ B_Golem:
   #방어력 스탯 0%
   Skills:
     #기본공격 (2초에 한번씩) : 평타를 때린다.
-  - skill{s=BGolem} @PIR{r=1} ~onTimer:30
+  - skill{s=BGolem_skill01} @PIR{r=5} ~onTimer:80
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
@@ -16,7 +16,24 @@ B_Golem:
     monskill: int/0  #스킬
   Options:
     Size: 3
-    MovementSpeed: 0.28 #이동속도 보통통 기준
+    MovementSpeed: 0.15 #이동속도 보통통 기준
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
+
+T_Golem:
+  Type: ZOMBIE
+  Display: "&f테스트 비행 좀비"
+  Health: 20
+  Damage: 1
+  Options:
+    Gravity: false    # 중력을 제거해서 떠다니도록 설정
+    NoAI: false       # AI를 활성화하여 움직이도록 설정
+  Attributes:
+    generic.flyingSpeed: 0.2  # 날아다닐 속도 설정
+  Skills:
+    #- skill{s=ZombieRoar} @Self ~onTimer:100
+    - effect:particles{p=cloud;a=10} @Self  # 구름 입자 효과 추가
+    - motion{m=0;1;0} @Self ~onTimer:20  # 위로 떠오르게 설정
+  Drops:
+    - DIAMOND 1-2 50%

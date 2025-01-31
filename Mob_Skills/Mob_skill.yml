@@ -1,14 +1,73 @@
-# 에니메이션 몹 테스트 구문
-BGolem:
+# 몹 테스트 구문
+BGolem_skill01:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
     #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
-  - message{m="테스트 골렘에게 공격당했습니다."} @PIR{r=2}
+  - message{m="테스트 버전 85 입니다."} @PIR{r=10}
+  - projectile{bulletType=BLOCK;materaial=STONE;oS=Startskill;oT=Tick;velocity=3;onHit=slow-skill;vO=0.839} @Target
+
+
+# delayBlockSkill:
+#   TargetLocations:
+#   - distance{d=<10} true
+#   Condition:
+#   - hasaura{n=stun} false
+#   Skills:
+#   - delay 80
+
+Startskill:
+  Skills:
+  - delay 20
+  - modifyProjectile{vO=0} @Self
+  - delay 20
+  - modifyProjectile{vO=-0.839} @Self
+
+Tick:
+  Skills:
+  - modifyProjectile{t=yoffset;a=ADD;v=-0.019} @Self
+
+applyGravity:
+  Skills:
+  - delay 10
+  - modifyProjectile{vO=0.839} @Self
+  - delay 10
+  - modifyProjectile{vO=0.577} @Self
+  - delay 10
+  - modifyProjectile{vO=0.364} @Self
+  - delay 10
+  - modifyProjectile{vO=0.176} @Self
+  - delay 10
+  - modifyProjectile{vO=0} @Self
+
+stay:
+  Skills:
+  - message{m="stay스킬이 사용되었습니다."} @Target
+  - modifyProjectile{velocity=0;gravity=1} @Self
+  - delay 80
+
+slow-skill:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - message{m="디버프에 걸렸습니다."}
+  - potion{type=SLOW;duration=80;level=2}
+
+stopProjectile:
+  Skills:
+  - effect:particles{p=crit;amount=10} @Origin
+  - sound{s=entity.experience_orb.pickup;v=1;p=1} @Origin
+  - delay 80
+  - remove @Origin
+
+
 #바우루 숲 던전 슬라임
-BigSlime:
+# 슬라임 스킬
+BasicSlime_attack:
   TargetLocations:
   - distance{d=<10} true
   Condition:
@@ -17,16 +76,38 @@ BigSlime:
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
   - message{m="큰 슬라임에게 공격당했습니다."} @PIR{r=2}
 
-MossSlime:
+#방울 슬라임 스킬
+BubbleSlime_attack:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
-  - message{m="이끼 슬라임에게 공격당했습니다."} @PIR{r=2}
+  - message{m="큰 슬라임에게 공격당했습니다."} @PIR{r=2}
 
-SquareSlime:
+#흐물흐물 슬라임 스킬
+MossSlime_attack:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - message{m="버전 V6.0"} @target
+  - totem{ch=1;yo=1;i=1;hR=3.25;md=5;onTick=effectSlow;onHit=MS-Hit} @self
+
+effectSlow:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - effect:particles{p=reddust;amount=200;hs=1;c=#00ffff;y=-1} @Origin
+
+#네모 슬라임 스킬
+SquareSlime_attack:
   TargetLocations:
   - distance{d=<10} true
   Condition:
@@ -34,3 +115,25 @@ SquareSlime:
   Skills:
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
   - message{m="네모 슬라임에게 공격당했습니다."} @PIR{r=2}
+
+#개구쟁이 슬라임 스킬
+MisSlime_attack:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
+  - message{m="네모 슬라임에게 공격당했습니다."} @PIR{r=2}
+
+# 흐물흐물 슬라임 스킬
+MSSkill:
+  Skills:
+  - message{m="흐물흐물 슬라임이 스킬 사용을 시작했습니다."} @PIR{r=10}
+  - projectile{bulletType=BLOCK;materaial=WOOD;onHit=MS-Hit} @PIR{r=10}
+
+#디버프 스킬
+MS-Hit:
+  Skills:
+  - message{m="흐물흐물 슬라임이 장판 스킬을 사용했습니다."} @PIR{r=10}
+  - potion{type=SLOW;duration=80;level=2}

@@ -1,7 +1,7 @@
 B_Slime:
   Type: Slime
   Health : 80
-  Display : "&f일반 슬라임"
+  Display : "&f초록 슬라임"
   Damage : 0
   Nameplate:
     Enabled: false
@@ -35,6 +35,7 @@ B_DarkPriest:
     monpen: int/0    #관통력 
     monno: int/10     #평타
     monskill: int/0  #스킬
+    monwp: none
   Options:
     MovementSpeed: 0.28 #이동속도 보통
     PreventSunburn : true
