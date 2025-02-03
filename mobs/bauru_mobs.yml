@@ -1,111 +1,148 @@
-B_Slime:
-  Type: Slime
-  Health : 10
+B_SLIME:
+  Type: Zombie
+  Health : 100
   Display : "&f슬라임"
   Damage : 0
+  Armor : 0
   Nameplate:
     Enabled: false
   #방어력 스탯 0%
   Skills:
     #기본공격 (2초에 한번씩) : 평타를 때린다.
-  - skill{s=BasicSlime_attack} @PIR{r=2} ~onTimer:30
+  - model{m=bau_aa;usm=true} @self ~onSpawn
+  - model{m=bau_aa;usm=true} @self ~onLoad
+  - skill{s=BASICSLIME_ATTACK} @PIR{r=2} ~onTimer:30
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
-    monno: int/10     #평타
-    monskill: int/0  #스킬
     monwp: none       #약점
   Options:
     Size: 3
     MovementSpeed: 0.15 #이동속도 보통 기준
     PreventSlimeSplit: true
 
-Bub_Slime:
-  Type: Slime
-  Health : 10
+BUB_SLIME:
+  Type: Bee
+  Health : 10 #30
   Display : "&f방울 슬라임"
   Damage : 0
+  Armor : 0
   Nameplate:
     Enabled: false
-  #방어력 스탯 0%
+  Conditions:
+  - stance aggressive
+  #AIGoalSelectors:
+  #- clear
+  #- lookatplayers{r=10}
+  AITargetSelctors:
+  - clear
+  - players
   Skills:
     #기본공격 : 플레이어와 닿으면 터지면서 주변에 30의 피해를 입힌다 (자폭)
-  - skill{s=BubbleSlime_attack} @PIR{r=2} ~onTimer:30
+  - message{m="방울 슬라임이 째려보고 있습니다."} @Target
+  - model{m=bau_ab;usm=true} @self ~onSpawn
+  - model{m=bau_ab;usm=true} @self ~onLoad
+  - skill{s=BUBBLESLIME_ATTACK} @PIR{r=2} ~onTimer:30
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
-    monno: int/0     #평타
-    monskill: int/30  #스킬
     monwp: none       #약점
   Options:
     Size: 3
     MovementSpeed: 0.15 #이동속도 보통 기준
     PreventSlimeSplit: true
 
-S_Slime:
+S_SLIME:
   Type: Slime
-  Health : 10
+  Health : 10 #150
   Display : "&f네모 슬라임"
   Damage : 0
+  Armor : 0
   Nameplate:
     Enabled: false
   #방어력 스탯 0%
   Skills:
     #기본공격 (2초에 한번씩) : 플레이어와 닿으면 멀리 밀치면서 10의 피해를 입힌다
-  - skill{s=SquareSlime_attack} @PIR{r=2} ~onTimer:30
+  - model{m=bau_ac;usm=true} @self ~onSpawn
+  - model{m=bau_ac;usm=true} @self ~onLoad
+  - skill{s=SQUARESLIME_ATTACK} @PIR{r=2} ~onTimer:30
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
-    monno: int/0     #평타
-    monskill: int/10  #스킬
     monwp: none       #약점
   Options:
     Size: 3
     MovementSpeed: 0.1 #이동속도 보통 기준
     PreventSlimeSplit: true
 
-M_Slime:
-  Type: zombie
-  Health : 20
+M_SLIME:
+  Type: Slime
+  Health : 10 #100
   Display : "&f흐물흐물 슬라임"
-  Damage : 0
+  Damage : 0.1
+  Armor : 0
   Nameplate:
     Enabled: false
   #방어력 스탯 0%
   Skills:
   #특수공격: 주변에 진득한 액체를 뿌린다. 3초동안 이동속도를 0.05 감소시킨다
-  - skill{s=MossSlime_attack} @PIR{r=5} ~onTimer:120
+  - model{m=bau_ad;usm=true} @self ~onSpawn
+  - model{m=bau_ad;usm=true} @self ~onLoad
+  - skill{s=MOSSSLIME_ATTACK} @PIR{r=5} ~onTimer:120
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
-    monno: int/10     #평타
-    monskill: int/0  #스킬
     monwp: none       #약점
   Options:
     Size: 3
     MovementSpeed: 0.1 #이동속도 보통 기준
-    PreventSunburn : true
-    PreventItemPickup: true
-    PreventRandomEquipment: true
+    #PreventSunburn : true
+    #PreventItemPickup: true
+    #PreventRandomEquipment: true
+    PreventSlimeSplit: true
 
-Mis_Slime:
+MIS_SLIME:
   Type: Slime
-  Health : 10
+  Health : 10 #60
   Display : "&f개구쟁이 슬라임"
   Damage : 0
+  Armor : 0
   Nameplate:
     Enabled: false
   #방어력 스탯 0%
   Skills:
     #기본공격 (2초에 한번씩) : 플레이어랑 닿으면 5의 피해를 입힌다
-  - skill{s=MisSlime_attack} @PIR{r=2} ~onTimer:30
+  - model{m=bau_ae;usm=true} @self ~onSpawn
+  - model{m=bau_ae;usm=true} @self ~onLoad
+  - skill{s=MISSLIME_ATTACK} @PIR{r=2} ~onTimer:30
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
-    monno: int/0     #평타
-    monskill: int/10  #스킬
     monwp: none       #약점
   Options:
     Size: 3
     MovementSpeed: 0.35 #이동속도 빠름
+    PreventSlimeSplit: true
+
+BOSS_SLIMEKING:
+  Type: Slime
+  Health : 10 #500
+  Display : "&슬라임 킹"
+  Damage : 0
+  Armor : 0
+  Nameplate:
+    Enabled: false
+  #방어력 스탯 0%
+  Skills:
+    #기본공격 (2초에 한번씩) : 플레이어랑 닿으면 5의 피해를 입힌다
+  - model{m=bau_ak;usm=true} @self ~onSpawn
+  - model{m=bau_ak;usm=true} @self ~onLoad
+  - skill{s=MISSLIME_ATTACK} @PIR{r=2} ~onTimer:30
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monwp: none       #약점
+  Options:
+    Size: 3
+    MovementSpeed: 0 #기본적으로 움직이지 않는 스킬
     PreventSlimeSplit: true
