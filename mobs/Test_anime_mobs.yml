@@ -8,15 +8,15 @@ B_Golem:
   #방어력 스탯 0%
   Skills:
     #기본공격 (2초에 한번씩) : 평타를 때린다.
-  - skill{s=BGolem_skill01} @PIR{r=5} ~onTimer:80
+  - skill{s=BGOLEM_SKILL01} @PIR{r=5} ~onTimer:120
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
     monno: int/10     #평타
     monskill: int/0  #스킬
   Options:
-    Size: 3
-    MovementSpeed: 0.15 #이동속도 보통통 기준
+    Silent : true
+    MovementSpeed: 0 #이동속도 보통통 기준
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true

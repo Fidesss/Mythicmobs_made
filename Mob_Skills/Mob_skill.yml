@@ -6,9 +6,9 @@ BGOLEM_SKILL01:
   - hasaura{n=stun} false
   Skills:
     #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
-  - message{m="침뱉기 스킬."} @PIR{r=10}
-  - projectile{bulletType:smallblock;oS=STARTSKILL;oT=TICK;velocity=3;onHit=SLOW-SKILL;vO=0.839} @Target
-
+  - message{m="버전 3.0 중력 적용."} @PIR{r=10}
+  - projectile{bulletType=BLOCK;materaial=STONE;g=0.1;oT=TICK;velocity=5;onHit=TEST_SLOW-SKILL;vO=0.839} @Target
+#;oS=STARTSKILL
 
 # delayBlockSkill:
 #   TargetLocations:
@@ -20,15 +20,16 @@ BGOLEM_SKILL01:
 
 STARTSKILL:
   Skills:
-  - delay 20
-  - modifyProjectile{vO=0} @Self
-  - delay 20
-  - modifyProjectile{vO=-0.839} @Self
+  - message{m="스타트 스킬 사용"} @Target
+  #- delay 20
+  #- modifyProjectile{vO=0} @Self
+  #- delay 20
+  #- modifyProjectile{vO=-0.839} @Self
 
 TICK:
   Skills:
-  - modifyProjectile{t=yoffset;a=ADD;v=-0.019} @Self
-  - effect:particles{p=reddust;amount=200;hs=1;y=0} @Origin
+  - #modifyProjectile{t=yoffset;a=ADD;v=-0.019} @Self
+  - effect:particles{p=reddust;amount=200;hs=0.5;y=0} @Origin
 
 APPLYGRAVITY:
   Skills:
@@ -49,14 +50,16 @@ STAY:
   - modifyProjectile{velocity=0;gravity=1} @Self
   - delay 80
 
-SLOW-SKILL:
+TEST_SLOW-SKILL:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - message{m="디버프에 걸렸습니다."}
-  - potion{type=SLOW;duration=80;level=2}
+  - message{m="STUN-SKILL에 맞았습니다."}
+  - stun{d=20} @ENO{r=2;limit=5;sort=NEAREST;ignore=players}
+  - aura{n=stun;d=20} @ENO{r=2;limit=5;sort=NEAREST;ignore=players}
+  
 
 STOPPROJECTILE:
   Skills:
@@ -73,6 +76,7 @@ BASICSLIME_ATTACK:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
+  - hasaura{n=silence} false
   Skills:
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
   - message{m="큰 슬라임에게 공격당했습니다."} @PIR{r=2}
@@ -83,6 +87,7 @@ BUBBLESLIME_ATTACK:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
+  - hasaura{n=silence} false
   Skills:
   #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
   - message{m="방울 슬라임에게 공격당했습니다."} @PIR{r=2}
@@ -141,3 +146,51 @@ MSSKILL:
   Skills:
   - message{m="흐물흐물 슬라임이 스킬 사용을 시작했습니다."} @PIR{r=10}
   - projectile{bulletType=BLOCK;materaial=WOOD;onHit=MS-Hit} @PIR{r=10}
+
+# 슬라임 킹
+# 슬라임 킹 1번스킬
+SLIMEKING_SKILL01:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - message{m="슬라임킹 스킬 1번 사용"} @PIR{r=5}
+
+# 슬라임 킹 2번스킬
+SLIMEKING_SKILL02:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - message{m="슬라임킹 스킬 2번 사용"} @PIR{r=5}
+  - projectile{bulletType=BLOCK;materaial=STONE;g=0.1;oT=SLIMEKING_SKILL02_EFFECT;velocity=5;onHit=SLOW-SKILL;vO=0.839} @Target
+
+SLIMEKING_SKILL02_EFFECT:
+  Skills:
+  - effect:particles{p=reddust;amount=10;hs=0.5;y=0} @Origin
+
+SLIMEKING_SKILL02_SLOW-HIT:
+  Skills:
+  - 슬라임킹의 스킬에 맞았습니다.
+  - stun{d=20} @ENO{r=2;limit=5;sort=NEAREST;ignore=players}
+
+
+# 슬라임 킹 3번스킬
+SLIMEKING_SKILL03:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - message{m="슬라임킹 스킬 3번 사용"} @PIR{r=5}
+
+# 슬라임 킹 4번스킬
+SLIMEKING_SKILL04:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - message{m="슬라임킹 스킬 4번 사용"} @PIR{r=5}
