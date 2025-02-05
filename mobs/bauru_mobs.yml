@@ -10,7 +10,8 @@ B_SLIME:
   Skills:
     #기본공격 (2초에 한번씩) : 평타를 때린다.
   - model{m=bau_aa;usm=true} @self ~onSpawn
-  - model{m=bau_aa;usm=true} @self ~onLoad
+  - brightness{mid=bau_aa;b=15;s=15} @self ~onSpawn
+  # - model{m=bau_aa;usm=true} @self ~onLoad
   - skill{s=BASICSLIME_ATTACK} @PIR{r=2} ~onTimer:30
   Variables:
     mondef: int/0     #방어력
@@ -22,35 +23,31 @@ B_SLIME:
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
-
+################################################
 BUB_SLIME:
   Type: Bee
-  Health : 10 #30
+  Health : 30
   Display : "&f방울 슬라임"
   Damage : 0
   Armor : 0
   Nameplate:
     Enabled: false
-  Conditions:
-  - stance aggressive
-  #AIGoalSelectors:
-  #- clear
-  #- lookatplayers{r=10}
-  AITargetSelctors:
-  - clear
-  - players
-  Skills:
-    #기본공격 : 플레이어와 닿으면 터지면서 주변에 30의 피해를 입힌다 (자폭)
-  - model{m=bau_ab;usm=true} @self ~onSpawn
-  - model{m=bau_ab;usm=true} @self ~onLoad
-  - skill{s=BUBBLESLIME_ATTACK} @PIR{r=2} ~onTimer:30
+  Options:
+    MovementSpeed: 0.15 #이동속도 보통 기준
+    Silent : true
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
     monwp: none       #약점
-  Options:
-    MovementSpeed: 0.15 #이동속도 보통 기준
-    Silent : true
+
+  Skills:
+  - message{m="버전 20 완료"} @PIR{r=3}
+  - runaitargetselector{target=clear} @self ~onSpawn
+  - runaitargetselector{target=players} @self ~onSpawn
+  - model{m=bau_ab;usm=true} @self ~onSpawn
+  - brightness{mid=bau_ab;b=15;s=15} @self ~onSpawn
+  - skill{s=BUBBLESLIME_ATTACK} @PIR{r=0.1} ~onAttack
+################################################
 
 S_SLIME:
   Type: Zombie
@@ -64,7 +61,7 @@ S_SLIME:
   Skills:
     #기본공격 (2초에 한번씩) : 플레이어와 닿으면 멀리 밀치면서 10의 피해를 입힌다
   - model{m=bau_ac;usm=true} @self ~onSpawn
-  - model{m=bau_ac;usm=true} @self ~onLoad
+  - brightness{mid=bau_ac;b=15;s=15} @self ~onSpawn
   - skill{s=SQUARESLIME_ATTACK} @PIR{r=2} ~onTimer:30
   Variables:
     mondef: int/0     #방어력
@@ -90,7 +87,7 @@ M_SLIME:
   Skills:
   #특수공격: 주변에 진득한 액체를 뿌린다. 3초동안 이동속도를 0.05 감소시킨다
   - model{m=bau_ad;usm=true} @self ~onSpawn
-  - model{m=bau_ad;usm=true} @self ~onLoad
+  - brightness{mid=bau_ad;b=15;s=15} @self ~onSpawn
   - skill{s=MOSSSLIME_ATTACK} @PIR{r=5} ~onTimer:120
   Variables:
     mondef: int/0     #방어력
@@ -115,7 +112,7 @@ MIS_SLIME:
   Skills:
     #기본공격 (2초에 한번씩) : 플레이어랑 닿으면 5의 피해를 입힌다
   - model{m=bau_ae;usm=true} @self ~onSpawn
-  - model{m=bau_ae;usm=true} @self ~onLoad
+  - brightness{mid=bau_ae;b=15;s=15} @self ~onSpawn
   - skill{s=MISSLIME_ATTACK} @PIR{r=2} ~onTimer:30
   Variables:
     mondef: int/0     #방어력
@@ -140,7 +137,7 @@ BOSS_SLIMEKING:
   Skills:
     #기본공격 (2초에 한번씩) : 플레이어랑 닿으면 5의 피해를 입힌다
   - model{m=bau_ak;usm=true} @self ~onSpawn
-  - model{m=bau_ak;usm=true} @self ~onLoad
+  - brightness{mid=bau_ak;b=15;s=15} @self ~onSpawn
   - message{m="슬라임 킹의 극적인 등장"} @PIR{r=10}
   - randomskill{skills=SLIMEKING_SKILL01 1, SLIMEKING_SKILL02 1, SLIMEKING_SKILL03 1, SLIMEKING_SKILL04 1}
   Variables:
@@ -149,6 +146,7 @@ BOSS_SLIMEKING:
     monwp: none       #약점
   Options:
     MovementSpeed: 0 #기본적으로 움직이지 않는 스킬
+    KnockbackResistance: 1
     Silent : true
     PreventSunburn : true
     PreventItemPickup: true
