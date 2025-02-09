@@ -71,44 +71,44 @@ STOPPROJECTILE:
 
 #바우루 숲 던전 슬라임
 # 슬라임 스킬
-BASICSLIME_ATTACK:
+bau_aa_attack:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   - hasaura{n=silence} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
-  - message{m="큰 슬라임에게 공격당했습니다."} @PIR{r=2}
-########################################################################
+  - setvariable{var=caster.mondmg;value="10";type=FLOAT} @Self
+  - state{s=attack;l=ONCE} @Self
+  - delay 10
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=4;ignore=monster}
+
 #방울 슬라임 스킬
-BUBBLESLIME_ATTACK:
+bau_ab_attack:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   - hasaura{n=silence} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
-  - message{m="방울 슬라임에게 공격당했습니다."} @PIR{r=2}
+  - state{s=attack} @self
+  - delay 10
   - setvariable{var=caster.mondmg;value="30";type=FLOAT} @Self
-  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=1;ignore=monster}
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=4;ignore=monster}
   - effect:particles{p=sonic_boom;a=10;vs=1;hs=0.5} @Self
   - remove @Self
-########################################################################
+
 #흐물흐물 슬라임 스킬
-MOSSSLIME_ATTACK:
+bau_ad_attack:
   TargetConditions:
   - distance{d=<5} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  #- state{mid=4;s=walk;r=true} @self
-  - state{mid=4;s=attack} @self
-  - message{m="버전 V9.0"} @target
-  - delay 20
+  - state{s=attack;l=ONCE} @Self
+  - delay 10
   - setvariable{var=caster.mondmg;value="10";type=FLOAT} @Self
-  - totem{ch=1;i=1;hR=3.25;vR=0.5;md=60;onTick=EFFECTSLOW;oH=MS-HIT;los=false} @self
+  - totem{ch=0;i=1;hR=3.25;vR=0.5;md=60;onTick=EFFECTSLOW;oH=MS-HIT;los=false} @self
 
 EFFECTSLOW:
   TargetLocations:
@@ -116,34 +116,39 @@ EFFECTSLOW:
   Condition:
   - hasaura{n=stun} false
   Skills:
-  - effect:particles{p=reddust;amount=200;hs=1;c=#00ffff;y=-1} @Origin
+  - effect:particles{p=reddust;amount=10;hs=1;c=#00ffff;y=-1} @Origin
 
 #디버프 스킬
 MS-HIT:
   Skills:
-  - message{m="흐물흐물 슬라임이 장판 스킬을 사용했습니다."} @ENO{r=4;ignore=monster}
+  #- message{m="흐물흐물 슬라임이 장판 스킬을 사용했습니다."} @ENO{r=4;ignore=monster}
   - potion{type=SLOW;duration=80;level=2} @ENO{r=4;ignore=monster}
   - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=4;ignore=monster}
 
 #네모 슬라임 스킬
-SQUARESLIME_ATTACK:
+bau_ac_attack:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
-  - message{m="네모 슬라임에게 공격당했습니다."} @PIR{r=2}
+  - setvariable{var=caster.mondmg;value="15";type=FLOAT} @Self
+  - state{s=attack;l=ONCE} @Self
+  - delay 10
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=4;limit=1}
+  - velocity{m=set;x=1;y=1;z=1;r=true} @ENO{r=4;limit=1}
 
 #개구쟁이 슬라임 스킬
-MISSLIME_ATTACK:
+bau_ae_attack:
   TargetLocations:
   - distance{d=<10} true
   Condition:
   - hasaura{n=stun} false
   Skills:
-  #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
-  - message{m="네모 슬라임에게 공격당했습니다."} @PIR{r=2}
+  - setvariable{var=caster.mondmg;value="5";type=FLOAT} @Self
+  - state{s=attack;l=ONCE} @Self
+  - delay 10
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @PIR{r=4;limit=1}
 
 # 흐물흐물 슬라임 스킬
 MSSKILL:
