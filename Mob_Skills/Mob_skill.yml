@@ -8,28 +8,31 @@ BGOLEM_SKILL01:
     #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
   - message{m="버전 8.0 타겟 테스트"} @Target
   - projectile{bulletType=BLOCK;materaial=STONE;g=0.1;oT=TICK;velocity=5;onHit=TEST_SLOW-SKILL;vO=0.839} @Target
-#;oS=STARTSKILL
 
-# delayBlockSkill:
-#   TargetLocations:
-#   - distance{d=<10} true
+BGOLEM_SKILL02:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
+  Skills:
+  - message{m="버전 2 충격파 모션 테스트"} @PIR{r=10}
+  - state{s=3;l=ONCE} @self
+  - delay 35
+  - summon{t=T_Model} @self
+
+# T_Model_attack:
+#   TargetConditions:
+#   - distance{d=<5} true
 #   Condition:
 #   - hasaura{n=stun} false
 #   Skills:
-#   - delay 80
-
-STARTSKILL:
-  Skills:
-  - message{m="스타트 스킬 사용"} @Target
-  #- delay 20
-  #- modifyProjectile{vO=0} @Self
-  #- delay 20
-  #- modifyProjectile{vO=-0.839} @Self
+#   - state{s=3*3} @Self
+#   - delay 30
+#   - remove @self
 
 TICK:
   Skills:
-  - #modifyProjectile{t=yoffset;a=ADD;v=-0.019} @Self
-  - effect:particles{p=reddust;amount=10;hs=0.5;y=0} @Origin
+  - effect:particles{p=reddust;amount=5;hs=0.5;y=0} @Origin
 
 APPLYGRAVITY:
   Skills:
@@ -57,8 +60,8 @@ TEST_SLOW-SKILL:
   - hasaura{n=stun} false
   Skills:
   - message{m="STUN-SKILL에 맞았습니다."} @ENO{r=3;limit=1;ignore=monster}
-  - stun{d=20} @ENO{r=6;limit=1;ignore=monster} #@ENO{r=2;limit=5;sort=NEAREST;ignore=monster}
-  - aura{n=stun;d=20} @ENO{r=6;limit=1;ignore=monster} #@ENO{r=2;limit=5;sort=NEAREST;ignore=monster}
+  - stun{d=20} @ENO{r=6;limit=1;ignore=monster}
+  - aura{n=stun;d=20} @ENO{r=6;limit=1;ignore=monster}
   
 
 STOPPROJECTILE:
@@ -94,8 +97,8 @@ bau_ab_attack:
   - state{s=attack} @self
   - delay 10
   - setvariable{var=caster.mondmg;value="30";type=FLOAT} @Self
-  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=4;ignore=monster}
-  - effect:particles{p=sonic_boom;a=10;vs=1;hs=0.5} @Self
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=3.3;ignore=monster}
+  - effect:particles{p=sonic_boom;a=10;vs=0.6;hs=0.6} @Self
   - remove @Self
 
 #흐물흐물 슬라임 스킬
@@ -175,16 +178,22 @@ SLIMEKING_SKILL02:
   - hasaura{n=stun} false
   Skills:
   - message{m="슬라임킹 스킬 2번 사용"} @PIR{r=5}
-  - projectile{bulletType=BLOCK;materaial=STONE;g=0.1;oT=SLIMEKING_SKILL02_EFFECT;velocity=5;onHit=SLOW-SKILL;vO=0.839} @Target
+  - projectile{bulletType=BLOCK;materaial=STONE;g=0.1;oT=SLIMEKING-SKILL02-EFFECT;velocity=5;onHit=SLIMEKING-SKILL02;vO=0.839} @Target
 
-SLIMEKING_SKILL02_EFFECT:
+SLIMEKING-SKILL02:
+  TargetLocations:
+  - distance{d=<10} true
+  Condition:
+  - hasaura{n=stun} false
   Skills:
-  - effect:particles{p=reddust;amount=10;hs=0.5;y=0} @Origin
+  - stun{d=20} @ENO{r=6;limit=1;ignore=monster}
+  - aura{n=stun;d=20} @ENO{r=6;limit=1;ignore=monster}
+  - auraremove{n=using} @ENO{r=6;limit=1;ignore=monster}
+  - auraremove{n=using2}  @ENO{r=6;limit=1;ignore=monster}
 
-SLIMEKING_SKILL02_SLOW-HIT:
+SLIMEKING-SKILL02-EFFECT:
   Skills:
-  - 슬라임킹의 스킬에 맞았습니다.
-  - stun{d=20} @ENO{r=2;limit=5;sort=NEAREST;ignore=players}
+  - effect:particles{p=reddust;amount=5;hs=0.5;y=0} @Origin
 
 
 # 슬라임 킹 3번스킬
@@ -195,6 +204,9 @@ SLIMEKING_SKILL03:
   - hasaura{n=stun} false
   Skills:
   - message{m="슬라임킹 스킬 3번 사용"} @PIR{r=5}
+  - state{s=attack;l=ONCE} @Self
+  - delay 35
+  
 
 # 슬라임 킹 4번스킬
 SLIMEKING_SKILL04:
