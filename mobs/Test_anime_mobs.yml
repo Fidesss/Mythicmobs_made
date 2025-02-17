@@ -7,8 +7,14 @@ B_Golem:
     Enabled: false
   #방어력 스탯 0%
   Skills:
-    #기본공격 (2초에 한번씩) : 평타를 때린다.
-  - skill{s=BGOLEM_SKILL01} @PIR{r=5} ~onTimer:120
+  # Slime king block test
+  #- skill{s=BGOLEM_SKILL01} @PIR{r=5} ~onTimer:120
+  - message{m="슬라임 킹 테스트 버전"} @PIR{r=10}
+  - model{m=bau_ak;usm=true} @self ~onSpawn
+  - model{m=bau_ak;usm=true} @self ~onLoad 
+  - brightness{mid=bau_ak;b=15;s=15} @self ~onSpawn
+  - brightness{mid=bau_ak;b=15;s=15} @self ~onLoad
+  - skill{s=BGOLEM_SKILL02} @PIR{r=5} ~onTimer:60
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
@@ -16,24 +22,31 @@ B_Golem:
     monskill: int/0  #스킬
   Options:
     Silent : true
-    MovementSpeed: 0 #이동속도 보통통 기준
+    MovementSpeed: 0 #이동속도 보통 기준
     PreventSunburn : true
+    KnockbackResistance: 1
     PreventItemPickup: true
     PreventRandomEquipment: true
 
-T_Golem:
-  Type: ZOMBIE
-  Display: "&f테스트 비행 좀비"
-  Health: 20
-  Damage: 1
+T_Model:
+  Type: block_display
+  DisplayOptions:
+    Block: AIR
+    Billboard: FIXED
   Options:
-    Gravity: false    # 중력을 제거해서 떠다니도록 설정
-    NoAI: false       # AI를 활성화하여 움직이도록 설정
-  Attributes:
-    generic.flyingSpeed: 0.2  # 날아다닐 속도 설정
+    Invincible: true
+    Collidable: false
   Skills:
-    #- skill{s=ZombieRoar} @Self ~onTimer:100
-    - effect:particles{p=cloud;a=10} @Self  # 구름 입자 효과 추가
-    - motion{m=0;1;0} @Self ~onTimer:20  # 위로 떠오르게 설정
-  Drops:
-    - DIAMOND 1-2 50%
+  - aura{d=40;i=10;
+    os=[
+    - message{m="T_Model Test v4"} @PIR{r=10}
+    - setvariable{var=caster.iteration;val=0;type=INTEGER}
+    - model{usestatemachine=true;mid=bau_ak_3;lockpitch=true} @self
+    - brightness{mid=bau_ak_3;b=15;s=15} @self
+    ];
+    ot=[
+    - setvariable{var=caster.iteration;val="<caster.var.iteration>+3"} @self
+    - message{m="tick <caster.var.iteration>"} @PIR{r=10}
+    - state{s=<caster.var.iteration>*<caster.var.iteration>;l=HOLD} @self
+    ];
+    oe=[ - remove @self ]} @self ~onSpawn

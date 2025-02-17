@@ -5,7 +5,6 @@ BGOLEM_SKILL01:
   Condition:
   - hasaura{n=stun} false
   Skills:
-    #- sudoskill{s=DAMAGEMONNO;setcasterastrigger=true} @PIR{r=2}
   - message{m="버전 8.0 타겟 테스트"} @Target
   - projectile{bulletType=BLOCK;materaial=STONE;g=0.1;oT=TICK;velocity=5;onHit=TEST_SLOW-SKILL;vO=0.839} @Target
 
@@ -13,22 +12,22 @@ BGOLEM_SKILL02:
   TargetLocations:
   - distance{d=<10} true
   Condition:
-  - hasaura{n=stun} false
+  - hasaura{n=stun}
   Skills:
-  - message{m="버전 2 충격파 모션 테스트"} @PIR{r=10}
+  - message{m="버전 3 데미지 테스트"} @PIR{r=10}
+  - setvariable{var=caster.mondmg;value="30";type=FLOAT} @Self
   - state{s=3;l=ONCE} @self
   - delay 35
-  - summon{t=T_Model} @self
-
-# T_Model_attack:
-#   TargetConditions:
-#   - distance{d=<5} true
-#   Condition:
-#   - hasaura{n=stun} false
-#   Skills:
-#   - state{s=3*3} @Self
-#   - delay 30
-#   - remove @self
+  - aura{d=40;i=10;
+    os=[
+    - summon{t=T_Model} @self
+    - setVariable{var=caster.iteration;val=0;type=INTEGER}
+    ];
+    ot=[
+    - setvariable{var=caster.iteration;val="<caster.var.iteration>+3"}
+    - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=<caster.var.iteration>;ignore=monster}
+    ];
+    oe=[ - remove @self ]} @self ~onSpawn
 
 TICK:
   Skills:
