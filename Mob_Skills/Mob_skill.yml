@@ -14,20 +14,38 @@ BGOLEM_SKILL02:
   Condition:
   - hasaura{n=stun}
   Skills:
-  - message{m="버전 3 데미지 테스트"} @PIR{r=10}
+  - message{m="버전 10 데미지 테스트"} @PIR{r=10}
   - setvariable{var=caster.mondmg;value="30";type=FLOAT} @Self
   - state{s=3;l=ONCE} @self
   - delay 35
-  - aura{d=40;i=10;
-    os=[
-    - summon{t=T_Model} @self
-    - setVariable{var=caster.iteration;val=0;type=INTEGER}
-    ];
-    ot=[
-    - setvariable{var=caster.iteration;val="<caster.var.iteration>+3"}
-    - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=<caster.var.iteration>;ignore=monster}
-    ];
-    oe=[ - remove @self ]} @self ~onSpawn
+  - skill{s=BDAMAGE1;delay=10}
+  - skill{s=BDAMAGE2;delay=10}
+  - skill{s=BDAMAGE3;delay=10}
+  
+  # - aura{d=40;i=10;
+  #   os=[
+  #   - summon{t=T_Model} @self
+  #   - setVariable{var=caster.iteration;val=0;type=INTEGER}
+  #   ];
+  #   ot=[
+  #   - setvariable{var=caster.itersation;val="<caster.var.iteration>+1"}
+  #   - skill{s=BDAMAGE<caster.var.iteration>}
+  #   ]} @self ~onSpawn
+  
+BDAMAGE1:
+  Skills:
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=3;ignore=monster}
+  - message{m="3칸 반경"} @PIR{r=3}
+
+BDAMAGE2:
+  Skills:
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=6;ignore=monster}
+  - message{m="6칸 반경"} @PIR{r=6}
+
+BDAMAGE3:
+  Skills:
+  - sudoskill{s=D_MTP;setcasterastrigger=true} @ENO{r=9;ignore=monster}
+  - message{m="9칸 반경"} @PIR{r=9}
 
 TICK:
   Skills:
@@ -177,7 +195,7 @@ SLIMEKING_SKILL02:
   - hasaura{n=stun} false
   Skills:
   - message{m="슬라임킹 스킬 2번 사용"} @PIR{r=5}
-  - projectile{bulletType=BLOCK;materaial=STONE;g=0.1;oT=SLIMEKING-SKILL02-EFFECT;velocity=5;onHit=SLIMEKING-SKILL02;vO=0.839} @Target
+  - projectile{bulletType=BLOCK;model=bau_ak_2;g=0.1;oT=SLIMEKING-SKILL02-EFFECT;velocity=5;onHit=SLIMEKING-SKILL02;vO=0.839} @Target
 
 SLIMEKING-SKILL02:
   TargetLocations:
@@ -215,3 +233,4 @@ SLIMEKING_SKILL04:
   - hasaura{n=stun} false
   Skills:
   - message{m="슬라임킹 스킬 4번 사용"} @PIR{r=5}
+  - spawnMob{a=5;m="bau_aa"} @self
