@@ -10,9 +10,7 @@ bau_aa:
   Skills:
     #기본공격 (2초에 한번씩) : 평타를 때린다.
   - model{m=bau_aa;usm=true} @self ~onSpawn
-  - model{m=bau_aa;usm=true} @self ~onLoad
   - brightness{mid=bau_aa;b=15;s=15} @self ~onSpawn
-  - brightness{mid=bau_aa;b=15;s=15} @self ~onLoad 
   - skill{s=bau_aa_attack} @PIR{r=4} ~onAttack
   Variables:
     mondef: int/0     #방어력
@@ -24,7 +22,24 @@ bau_aa:
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
-    PreventOtherDrops: true
+
+bau_ab2:
+  Type: Bee
+  Health : 30
+  Display : "&f방울 슬라임"
+  Damage : 0
+  Armor : 0
+  Nameplate:
+    Enabled: true
+    Mounted: true
+    Offset: 1.8 
+  Options:
+    MovementSpeed: 0.15 #이동속도 보통 기준
+    Silent : true
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monwp: none       #약점
 
 bau_ab:
   Type: Bee
@@ -33,11 +48,12 @@ bau_ab:
   Damage : 0
   Armor : 0
   Nameplate:
-    Enabled: false
+    Enabled: true
+    Mounted: true
+    Offset: 1.8 
   Options:
     MovementSpeed: 0.15 #이동속도 보통 기준
     Silent : true
-    PreventOtherDrops: true
   Variables:
     mondef: int/0     #방어력
     monpen: int/0    #관통력 
@@ -47,9 +63,7 @@ bau_ab:
   - runaitargetselector{target=clear} @self ~onSpawn
   - runaitargetselector{target=players} @self ~onSpawn
   - model{m=bau_ab;usm=true} @self ~onSpawn
-  - model{m=bau_ab;usm=true} @self ~onLoad 
   - brightness{mid=bau_ab;b=15;s=15} @self ~onSpawn
-  - brightness{mid=bau_ab;b=15;s=15} @self ~onLoad 
   - skill{s=bau_ab_attack} @PIR{r=0.1} ~onAttack
 
 
@@ -65,9 +79,7 @@ bau_ac:
   Skills:
     #기본공격 (2초에 한번씩) : 플레이어와 닿으면 멀리 밀치면서 10의 피해를 입힌다
   - model{m=bau_ac;usm=true} @self ~onSpawn
-  - model{m=bau_ac;usm=true} @self ~onLoad 
   - brightness{mid=bau_ac;b=15;s=15} @self ~onSpawn
-  - brightness{mid=bau_ac;b=15;s=15} @self ~onLoad 
   - skill{s=bau_ac_attack} @PIR{r=4} ~onAttack
   Variables:
     mondef: int/0     #방어력
@@ -80,7 +92,6 @@ bau_ac:
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
-    PreventOtherDrops: true
 
 bau_ad:
   Type: Zombie
@@ -94,9 +105,7 @@ bau_ad:
   Skills:
   #특수공격: 주변에 진득한 액체를 뿌린다. 3초동안 이동속도를 0.05 감소시킨다
   - model{m=bau_ad;usm=true} @self ~onSpawn
-  - model{m=bau_ad;usm=true} @self ~onLoad
   - brightness{mid=bau_ad;b=15;s=15} @self ~onSpawn
-  - brightness{mid=bau_ad;b=15;s=15} @self ~onLoad
   - skill{s=bau_ad_attack} @PIR{r=5} ~onTimer:120
   Variables:
     mondef: int/0     #방어력
@@ -108,7 +117,6 @@ bau_ad:
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
-    PreventOtherDrops: true
 
 bau_ae:
   Type: Zombie
@@ -121,9 +129,8 @@ bau_ae:
   #방어력 스탯 0%
   Skills:
   - model{m=bau_ae;usm=true} @self ~onSpawn
-  - model{m=bau_ae;usm=true} @self ~onLoad 
+  - model{m=bau_ae;usm=true} @self ~onLoad
   - brightness{mid=bau_ae;b=15;s=15} @self ~onSpawn
-  - brightness{mid=bau_ae;b=15;s=15} @self ~onLoad 
   - skill{s=bau_ae_attack} @PIR{r=4} ~onAttack
   Variables:
     mondef: int/0     #방어력
@@ -135,7 +142,6 @@ bau_ae:
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
-    PreventOtherDrops: true
 
 bau_ak:
   Type: Zombie
@@ -149,9 +155,7 @@ bau_ak:
   Skills:
     #기본공격 (2초에 한번씩) : 플레이어랑 닿으면 5의 피해를 입힌다
   - model{m=bau_ak;usm=true} @self ~onSpawn
-  - model{m=bau_ak;usm=true} @self ~onLoad 
   - brightness{mid=bau_ak;b=15;s=15} @self ~onSpawn
-  - brightness{mid=bau_ak;b=15;s=15} @self ~onLoad 
   - message{m="슬라임 킹 버전 2"} @PIR{r=10}
   - randomskill{skills=SLIMEKING_SKILL01 1, SLIMEKING_SKILL02 1, SLIMEKING_SKILL03 1, SLIMEKING_SKILL04 1} @PIR{r=10} ~onTimer:160
   Variables:
@@ -165,6 +169,7 @@ bau_ak:
     PreventSunburn : true
     PreventItemPickup: true
     PreventRandomEquipment: true
-    PreventOtherDrops: true
-
-# 슬라임 킹 충격파 모델
+  BossBar:
+    Enabled: true
+    Title: "슬라임 킹"
+    Color: #b300ff
