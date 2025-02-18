@@ -1,0 +1,50 @@
+dbau_aa:
+  Type: Zombie
+  Health : 100
+  Display : "&f악마 숭배자 신도"
+  Damage : 0
+  Armor : 0
+  Nameplate:
+    Enabled: false
+  #방어력 스탯 0%
+  Skills:
+    #기본공격 (2초에 한번씩) : 평타를 때린다.
+  - model{m=dbau_aa;usm=true} @self ~onSpawn
+  - brightness{mid=dbau_aa;b=15;s=15} @self ~onSpawn
+  - skill{s=dbau_aa_attack} @PIR{r=4} ~onAttack
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monwp: none       #약점
+  Options:
+    MovementSpeed: 0.2 #이동속도 보통 기준
+    Silent : true
+    PreventSunburn : true
+    PreventItemPickup: true
+    PreventRandomEquipment: true
+
+
+dbau_ak:
+  Type: Zombie
+  Health : 100
+  Display : "&f악마숭배자 암흑사제"
+  Damage : 0
+  Armor : 0
+  Nameplate:
+    Enabled: false
+  #방어력 스탯 0%
+  Skills:
+    #기본공격 (2초에 한번씩) : 평타를 때린다.
+  - model{m=dbau_ak;usm=true} @self ~onSpawn
+  - brightness{mid=dbau_ak;b=15;s=15} @self ~onSpawn
+  - skill{s=dbau_ak_attack} @PIR{r=4} ~onAttack
+  Variables:
+    mondef: int/0     #방어력
+    monpen: int/0    #관통력 
+    monwp: none       #약점
+  Options:
+    MovementSpeed: 0.2 #이동속도 보통 기준
+    Silent : true
+    PreventSunburn : true
+    PreventItemPickup: true
+    PreventRandomEquipment: true
